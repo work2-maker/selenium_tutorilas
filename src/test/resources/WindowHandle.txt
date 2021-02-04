@@ -1,0 +1,74 @@
+What is a window handle?
+It is a unique identifier that holds the address of all the windows. Think of it as a pointer to a window, which returns the string value. It is assumed that each browser will have a unique window handle. This window handle function helps to retrieve the handles of all windows.
+
+Syntax
+
+get.windowhandle(): This method helps to get the window handle of the current window
+get.windowhandles(): This method helps to get the handles of all the windows opened
+set: This method helps to set the window handles in the form of a string. set<string> set= driver.get.windowhandles()
+switch to: This method helps to switch between the windows
+action: This method helps to perform certain actions on the windows
+These are some of the methods that will be used to handle multiple windows in Selenium.
+
+
+Example of handling multiple windows
+Scenario: Navigate to the Browserstack home page. This is the parent window. From the parent window, let’s see how to handle the child windows and then again navigate back to the parent windows.
+
+Steps to execute:
+
+Get the handle of the parent window using the command: String parentWindowHandle = driver.getWindowHandle();
+Print the window handle of the parent window.
+Find the element on the web page using an ID which is an element locator.
+Open multiple child windows.
+Iterate through child windows.
+Get the handles of all the windows that are currently open using the command: Set<String> allWindowHandles = driver.getWindowHandles(); which returns the set of handles.
+Use the SwitchTo command to switch to the desired window and also pass the URL of the web page.
+Refer to the complete program below.
+
+import java.util.Iterator; 
+import java.util.Set; 
+import org.openqa.selenium.By; 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandle_Demo { 
+public static void main(String[] args) throws Exception {
+
+
+System.setProperty("webdriver.chrome.driver","Path to the driver"); 
+WebDriver driver = new ChromeDriver();
+
+driver.manage().window().maximize();
+
+// Load the website
+driver.get("http://www.naukri.com/");
+
+// It will return the parent window name as a String
+String parent=driver.getWindowHandle();
+
+Set<String>s=driver.getWindowHandles();
+
+// Now iterate using Iterator
+Iterator<String> I1= s.iterator();
+
+while(I1.hasNext())
+{
+
+String child_window=I1.next();
+
+
+if(!parent.equals(child_window))
+{
+driver.switchTo().window(child_window);
+
+System.out.println(driver.switchTo().window(child_window).getTitle());
+
+driver.close();
+}
+
+}
+//switch to the parent window
+driver.switchTo().window(parent);
+
+}
+}
