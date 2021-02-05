@@ -22,34 +22,20 @@ public class Working_With_Checkbox {
 
 	WebElement checkbox2=driver.findElement(By.id("interest_sell_c0"));
 	
-    WebElement radio1=driver.findElement(By.cssSelector("#interest_sell_c0"));
+    WebElement radio1=driver.findElement(By.xpath("//input[@type=\"radio\"]"));
 	
 	Actions action=new Actions(driver);
 	
-	//action.moveToElement(checkbox2).click();
+	action.moveToElement(checkbox2).click();
 
 	Thread.sleep(3000);
 	
 	action.moveToElement(radio1).click().perform();
 	
-
 	
+	  // For Clicking any specific element
 	
-	
-
-	
-/*
-	
-	WebElement radio1=driver.findElement(By.cssSelector("#doi0"));
-
-	
-	
-*/
-	
-	
-	  // Clicking any specific element
-	
-	//Make use of : Actions class
+	//Make use of : Actions class , also remeber to put .perform() after every action....
 
 	}
 }
