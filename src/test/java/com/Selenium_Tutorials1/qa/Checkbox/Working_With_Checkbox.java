@@ -26,13 +26,13 @@ public class Working_With_Checkbox {
 	
 	Actions action=new Actions(driver);
 	
-	action.moveToElement(checkbox2).click();
+	//action.moveToElement(checkbox2).click();
 
 	Thread.sleep(3000);
 	
-	action.moveToElement(radio1).click();
+	action.moveToElement(radio1).click().perform();
 	
-	action.perform();
+
 	
 	
 	
