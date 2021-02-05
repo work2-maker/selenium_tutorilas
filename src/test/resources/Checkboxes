@@ -1,0 +1,17 @@
+
+
+
+
+Working with Checkboxes:
+
+
+1. Clicking any specific element
+	
+//  Make use of : Actions class
+
+       //NOte: It is mandatory to use .perform() at end of every action method , otherwise the action will not will be performed. 
+
+
+2. Clicking all checkboxes on a Page 
+Remeber : All checkboxes have : type='checkboxes' in Common
+

@@ -1,0 +1,58 @@
+We can handle dropdowns using --> Select class 
+How to Select Value from DropDown using Selenium Webdriver
+In this tutorial, we will learn how to handle DropDown in Selenium and Multiple Select Operations.
+
+Select Class in Selenium
+The Select Class in Selenium is a method used to implement the HTML SELECT tag. The html select tag provides helper methods to select and deselect the elements. The Select class is an ordinary class so New keyword is used to create its object and it specifies the web element location.
+
+
+
+
+Select Option from Drop-Down Box
+Following is a step by step process on how to select value from dropdown in Selenium:
+
+Before handling dropdown in Selenium and controlling drop-down boxes, we must do following two things:
+
+Import the package org.openqa.selenium.support.ui.Select
+Instantiate the drop-down box as an object, Select in Selenium WebDriver
+
+
+
+
+Selecting Items in a Multiple SELECT elements
+1.  We can also use the selectByVisibleText() method in selecting multiple options in a multi SELECT element. As an example, we will take http://jsbin.com/osebed/2 as the base URL. It contains a drop-down box that allows multiple selections at a time.
+selectByVisibleText() and deselectByVisibleText() 
+
+Example: 
+How to Select Option from DropDown using Selenium Webdriver	
+Selects/deselects the option that displays the text matching the parameter.
+
+Parameter: The exactly displayed text of a particular option
+
+2. selectByValue() and deselectByValue() 
+
+Example: How to Select Option from DropDown using Selenium Webdriver	
+Selects/deselects the option whose "value" attribute matches the specified parameter.
+Parameter: value of the "value" attribute
+Remember that not all drop-down options have the same text and "value", like in the example below.
+
+selectByIndex() and deselectByIndex() 
+Example: How to Select Option from DropDown using Selenium Webdriver  	
+Selects/deselects the option at the given index.
+Parameter: the index of the option to be selected.
+
+
+
+
+isMultiple() 
+Example: How to Select Option from DropDown using Selenium Webdriver  	
+Returns TRUE if the drop-down element allows multiple selections at a time; FALSE if otherwise.
+No parameters needed
+
+
+       // NOTE : Deselect and deselectAll are applicable to Multi-select dropdowns only......................
+deselectAll()   
+Example: How to Select Option from DropDown using Selenium Webdriver  	
+Clears all selected entries. This is only valid when the drop-down element supports multiple selections.
+No parameters needed
+
